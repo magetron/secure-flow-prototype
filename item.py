@@ -1,9 +1,9 @@
 import uuid
 
 class Item:
-    def __init__ (self, item_name, description, base_price):
+    def __init__ (self, name, description, base_price):
         self.__id = uuid.uuid1()
-        self.__item_name = product_name
+        self.__name = name
         self.__description = description
         self.__base_price = base_price
         self.__sold = False
@@ -14,7 +14,7 @@ class Item:
 
     @property
     def item_name (self):
-        return self.__item_name
+        return self.__name
 
     @property
     def sold (self):
