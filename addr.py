@@ -24,4 +24,3 @@ class Addr:
     def post_code (self):
         return self.__post_code
 
-
