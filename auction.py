@@ -23,12 +23,15 @@ class Auction:
         return self.__item
 
     @property
-    def item (Self):
+    def started (self):
         return self.__started
 
     @property
     def bid (self):
         return self.__bid
+
+    def update_bid (self, bid)
+        self.__bid = bid
         
     def start (self):
         if self.__failed == None:
