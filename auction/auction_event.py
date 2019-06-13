@@ -18,13 +18,14 @@ class Auction_event:
 
     def add_new_auction (self, new_auction):
         already_exsist = filter(lambda auction: auction.id == new_auction.id, self.__list)
-        if already_exsist:
+        if list(already_exsist) != []:
             logging.error("Auction {} is already in the list.".format(new_auction.id))
         else:
-            self.__list.append(auction)
+            logging.info("Auction {} appended to Auction Event {}.".format(new_auction.id, self.__id))
+            self.__list.append(new_auction)
 
     def get_last_auction_status_by_item_id (self, item_id):
-        item_auction = filter(lambda auction: auction.item.id == item_id, self.auctions)[-1]
+        item_auction = list(filter(lambda auction: auction.item.id == item_id, self.__list))[-1]
         if item_auction == None:
             status = "Item {} has no auctions".format(item_id)
         else:
@@ -33,12 +34,12 @@ class Auction_event:
                 status += "The above auction has failed due to not met of base price. \n"
             elif item_auction.started:
                 status += "The above auction has started with "
-                if item_auction.bid == None
+                if item_auction.bid == None:
                     status += "no bid. \n"
-                else
+                else:
                     status += "top bid of {} from {}. \n".format(item_auction.bid.amount, item_auction.bid.bidder)
             else:
-                status += "The above auction has ended with item sold of {} to {}. \n".format(item_auction.bid.amount, item_auction.bid.bidder)
+                status += "The above auction has ended with item sold of {} to {}. \n".format(item_auction.bid.amount, item_auction.bid.bidder.name.get_full_name())
 
         return status
 
