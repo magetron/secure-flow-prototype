@@ -44,7 +44,7 @@ Execute `python3 gen-cfg.py` to generate cfg for `./auction/bid.py` and `./aucti
 
 ## Disclaimer
 
-This project is simply a test project to prove an idea. Such that it might lack crucial features such as countdown, expiry anddates, payments and etc. Be mindful when using this project.
+This project is simply a test project to prove an idea. Such that it might lack crucial features such as countdown, expiry dates, payments and etc. Be mindful when using this project.
 
 
 
