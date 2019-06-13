@@ -25,10 +25,11 @@ class Auction_event:
             self.__list.append(new_auction)
 
     def get_last_auction_status_by_item_id (self, item_id):
-        item_auction = list(filter(lambda auction: auction.item.id == item_id, self.__list))[-1]
-        if item_auction == None:
+        item_auction = list(filter(lambda auction: auction.item.id == item_id, self.__list))
+        if list(item_auction) == []:
             status = "Item {} has no auctions".format(item_id)
         else:
+            item_auction = list(item_auction)[-1]
             status = "Lastest auction for item {} {} is {}. \n".format(item_id, item_auction.item.name, item_auction.id)
             if item_auction.failed:
                 status += "The above auction has failed due to not met of base price. \n"
