@@ -19,5 +19,3 @@ class Name:
     def last_name (self):
         return self.__last_name
 
-
-
