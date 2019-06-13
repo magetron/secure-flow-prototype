@@ -49,12 +49,12 @@ class Auction:
             bid = self.__bid
             if (bid == None or (bid != None and self.item.base_price > bid.amount)):
                 self.__failed = True
-                logging.warning("Auction {} did not reach itme {} base price.".format(self.__id, self.__item.id))
+                logging.warning("Auction final {} did not reach item {} base price. Thus NOT sold.".format(self.__id, self.__item.name))
             else:
                 self.__failed = False
                 self.__item.update_sold(True)
             self.__started = False
-            logging.info("Auction {} has ended with bid {} on item {}.".format(self.__id, self.__bid.id, self.__item.id))
+            logging.info("Auction {} has ended with bid {} on item {}.".format(self.__id, self.__bid.amount, self.__item.name))
         else:
             logging.error("Auction {} has not started yet.".format(self.__id))
 
