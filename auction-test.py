@@ -14,6 +14,7 @@ class AuctionTest (unittest.TestCase):
         self.user = User(Name("Patrick", "", "Wu"), Card("1234567890", "123", 2099, 12), Addr("Room A, Road B", "London", "UK", "WC1E 6BT"))
 
     def tearDown (self):
+        print("------------------------")
         self.auction = None
 
     def testStart (self):
@@ -23,11 +24,19 @@ class AuctionTest (unittest.TestCase):
     def testSuccess (self):
         self.auction.start()
         self.user.bid(self.auction, 6010)
+        self.user.bid(self.auction, 6020)
         self.auction.stop()
         self.assertFalse(self.auction.started)
         self.assertFalse(self.auction.failed)
         self.assertTrue(self.auction.item.sold)
         
+    def testLowBidFail (self):
+        self.auction.start()
+        self.user.bid(self.auction, 5099)
+        self.auction.stop()
+        self.assertFalse(self.auction.started)
+        self.assertTrue(self.auction.failed)
+        self.assertFalse(self.auction.item.sold)
 
     def testNotStart (self):
         self.auction.stop()
