@@ -38,9 +38,13 @@ class Auction_event_test (unittest.TestCase):
         self.auction_event.add_new_auction(auction1)
         self.auction_event.add_new_auction(auction2)
         self.auction_event.list[0].start()
+        self.auction_event.list[1].start()
         self.user.bid(self.auction_event.list[0], 6001)
+        self.user.bid(self.auction_event.list[1], 5500)
+        self.user.bid(self.auction_event.list[1], 5750)
         self.auction_event.list[0].stop()
         print(self.auction_event.get_last_auction_status_by_item_id(self.item1.id))
+        print(self.auction_event.get_last_auction_status_by_item_id(self.item2.id))
     
     def testLastAuctionSearchNone (self):
         auction1 = Auction(self.item1)
