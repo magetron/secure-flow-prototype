@@ -1,7 +1,4 @@
 import uuid
-import logging
-
-logging.getLogger().setLevel(logging.INFO)
 
 class Auction_event:
     def __init__ (self):
