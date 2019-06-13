@@ -19,9 +19,9 @@ class Auction_event:
     def add_new_auction (self, new_auction):
         already_exsist = filter(lambda auction: auction.id == new_auction.id, self.__list)
         if list(already_exsist) != []:
-            logging.error("Auction {} is already in the list.".format(new_auction.id))
+            print("ERROR: Auction {} is already in the list.".format(new_auction.id))
         else:
-            logging.info("Auction {} appended to Auction Event {}.".format(new_auction.id, self.__id))
+            print("INFO: Auction {} appended to Auction Event {}.".format(new_auction.id, self.__id))
             self.__list.append(new_auction)
 
     def get_last_auction_status_by_item_id (self, item_id):

@@ -1,12 +1,12 @@
 import uuid
-import logging
+#import logging
 
-logging.getLogger().setLevel(logging.INFO)
+#logging.getLogger().setLevel(logging.INFO)
 
 class Auction:
     def __init__ (self, item):
         if item.sold:
-            logging.error("Item {} already sold.".format(item.name))
+            print("ERROR: Item {} already sold.".format(item.name))
         else:
             self.__id = uuid.uuid1()
             self.__item = item
@@ -40,23 +40,23 @@ class Auction:
     def start (self):
         if self.__failed == None:
             self.__started = True
-            logging.info("Auction {} has started.".format(self.__id))
+            print("INFO: Auction {} has started.".format(self.__id))
         else:
-            logging.error("Auction {} failed to start.".format(self.__id))
+            print("ERROR: Auction {} failed to start.".format(self.__id))
 
     def stop (self):
         if self.__started:
             bid = self.__bid
             if (bid == None or (bid != None and self.item.base_price > bid.amount)):
                 self.__failed = True
-                logging.warning("Auction final {} did not reach item {} base price. Thus NOT sold.".format(self.__id, self.__item.name))
+                print("WARNING: Auction final {} did not reach item {} base price. Thus NOT sold.".format(self.__id, self.__item.name))
             else:
                 self.__failed = False
                 self.__item.update_sold(True)
             self.__started = False
-            logging.info("Auction {} has ended with bid {} on item {}.".format(self.__id, self.__bid.amount, self.__item.name))
+            print("INFO: Auction {} has ended with bid {} on item {}.".format(self.__id, self.__bid.amount, self.__item.name))
         else:
-            logging.error("Auction {} has not started yet.".format(self.__id))
+            print("ERROR: Auction {} has not started yet.".format(self.__id))
 
 
     
