@@ -20,6 +20,16 @@
 └── gen-cfg.py
 ```
 
+## Control Flow Graphs
+
+### `auction.py`
+
+![auction.py](https://raw.githubusercontent.com/magetron/secure-flow-prototype/master/cfgs/auctionCfg.png?token=AB2UXRNBCVRBNXI6WZHRZP25BP2NA)
+
+### `bid.py`
+
+![bid.py](https://raw.githubusercontent.com/magetron/secure-flow-prototype/master/cfgs/bidCfg.png?token=AB2UXRPBFPCF6SBLJSFXKEK5BP2KY)
+
 ## Usage
 
 See `auction-test.py` and `auction-event-test.py` for usages and unit tests.
