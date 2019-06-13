@@ -24,7 +24,7 @@
 
 See `auction-test.py` and `auction-event-test.py` for usages and unit tests.
 
-Execute `python3 auction-test.py auction-event-test.py` to run all tests
+Execute `python3 auction-test.py` (tests on a single auction) and `python3 auction-event-test.py` (tests on auction events) to run all tests
 
 Execute `python3 gen-cfg.py` to generate cfg for `bid.py` and `auction.py`.
 
