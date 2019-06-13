@@ -17,6 +17,7 @@ class Auction_event_test (unittest.TestCase):
         self.item2 = Item("Google Pixel 3 XL", "G013C 64G", 5000)
 
     def tearDown (self):
+        print("\n")
         self.auction_event = None
 
     def testAddAuction (self):
