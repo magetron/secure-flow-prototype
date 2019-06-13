@@ -1,8 +1,6 @@
 import uuid
-from bid import Bid
-from name import Name
-from card import Card
-from addr import Addr
+
+from .bid import Bid
 
 class User:
     def __init__ (self, name, card, addr):

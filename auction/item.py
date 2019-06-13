@@ -13,12 +13,20 @@ class Item:
         return self.__id
 
     @property
-    def item_name (self):
+    def name (self):
         return self.__name
+
+    @property
+    def description (self):
+        return self.__description
+
+    @property
+    def base_price (self):
+        return self.__base_price
 
     @property
     def sold (self):
         return self.__sold
 
-
-
+    def update_sold (self, sold):
+        self.__sold = sold

@@ -4,7 +4,7 @@ import logging
 logging.getLogger().setLevel(logging.INFO)
 
 class Auction:
-    def __init (self, item):
+    def __init__ (self, item):
         if item.sold:
             logging.error("Item {} already sold.".format(item.name))
         else:
@@ -25,13 +25,17 @@ class Auction:
     @property
     def started (self):
         return self.__started
+    
+    @property
+    def failed (self):
+        return self.__failed
 
     @property
     def bid (self):
         return self.__bid
 
-    def update_bid (self, bid)
-        self.__bid = bid
+    def update_bid (self, new_bid):
+        self.__bid = new_bid
         
     def start (self):
         if self.__failed == None:
@@ -48,11 +52,11 @@ class Auction:
                 logging.warning("Auction {} did not reach itme {} base price.".format(self.__id, self.__item.id))
             else:
                 self.__failed = False
-                self.__item.sold = True
+                self.__item.update_sold(True)
             self.__started = False
-            logging.info("Auction {} has ended with bid {} on item {}.".format(self.__id, self.__bid, self.__item.id))
+            logging.info("Auction {} has ended with bid {} on item {}.".format(self.__id, self.__bid.id, self.__item.id))
         else:
-            logging.error("Auction {} has not started yet.".format(self.__id)
+            logging.error("Auction {} has not started yet.".format(self.__id))
 
 
     
