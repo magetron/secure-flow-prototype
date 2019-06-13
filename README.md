@@ -9,19 +9,28 @@
 ├── auction
 │   ├── addr.py
 │   ├── auction.py
+│   ├── auction_event.py
 │   ├── bid.py
 │   ├── card.py
 │   ├── item.py
 │   ├── name.py
 │   └── user.py
-└── auction-test.py
+├── auction-event-test.py
+├── auction-test.py
+└── gen-cfg.py
 ```
 
 ## Usage
 
-See `auction-test.py` for usages and unit tests.
+See `auction-test.py` and `auction-event-test.py` for usages and unit tests.
 
-Execute `python3 auction-test.py` to run all tests
+Execute `python3 auction-test.py auction-event-test.py` to run all tests
+
+Execute `python3 gen-cfg.py` to generate cfg for `bid.py` and `auction.py`.
+
+## Known issues
+
+* CFG generation is not working for `auction_event.py` due to unsupported strings in the CFG generation process.
 
 ## Disclaimer
 
