@@ -26,11 +26,11 @@ See `auction-test.py` and `auction-event-test.py` for usages and unit tests.
 
 Execute `python3 auction-test.py` (tests on a single auction) and `python3 auction-event-test.py` (tests on auction events) to run all tests
 
-Execute `python3 gen-cfg.py` to generate cfg for `bid.py` and `auction.py`.
+Execute `python3 gen-cfg.py` to generate cfg for `./auction/bid.py` and `./auction/auction.py`.
 
 ## Known issues
 
-* CFG generation is not working for `auction_event.py` due to unsupported strings in the CFG generation process.
+* CFG generation is not working for `./auction/auction_event.py` due to unsupported strings in the CFG generation process.
 
 ## Disclaimer
 
