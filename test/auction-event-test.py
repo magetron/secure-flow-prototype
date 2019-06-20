@@ -12,7 +12,7 @@ class Auction_event_test (unittest.TestCase):
     
     def setUp (self):
         self.auction_event = Auction_event()
-        self.user = User(Name("Patrick", "", "Wu"), Card("1234567890", "123", 2099, 12), Addr("Room A, Rd B", "London", "UK", "WC1E 6BT"))
+        self.user = User(Name("Patrick", "", "Wu"), Card("1234567890123456", "123", 2099, 12), Addr("Room A, Rd B", "London", "UK", "WC1E 6BT"))
         self.item1 = Item("iPhone XS Max Space Grey", "A2104 256G", 6000)
         self.item2 = Item("Google Pixel 3 XL", "G013C 64G", 5000)
 

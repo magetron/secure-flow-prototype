@@ -11,7 +11,7 @@ class AuctionTest (unittest.TestCase):
 
     def setUp (self):
         self.auction = Auction(Item("iPhone XS Max", "iPhone A2104 256G", 6000))
-        self.user = User(Name("Patrick", "", "Wu"), Card("1234567890", "123", 2099, 12), Addr("Room A, Road B", "London", "UK", "WC1E 6BT"))
+        self.user = User(Name("Patrick", "", "Wu"), Card("1234567890123456", "123", 2099, 12), Addr("Room A, Road B", "London", "UK", "WC1E 6BT"))
 
     def tearDown (self):
         print("\n")
