@@ -4,5 +4,8 @@
 # Python
 __pycache__/
 
+# IDEA
+.idea
+
 # CFG test PDFs
 *.pdf
